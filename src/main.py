@@ -44,6 +44,9 @@ def run_tests(test_names=None, subfolder=None, append=False):
 
     loader = unittest.TestLoader()
     if test_names:
+        if subfolder:
+            # Prepend the subfolder to each test name
+            test_names = [f'tests.{subfolder}.{name}' for name in test_names]
         # Load specified test cases
         tests = loader.loadTestsFromNames(test_names)
     elif subfolder:
@@ -98,13 +101,13 @@ if __name__ == '__main__':
     # Example usage:
     # Run specific test cases
     test_cases_to_run = [
-        'tests.other.test_purchase_info.PurchaseInfo.test_form_submission',
-        'tests.other.test_multi_selector.MultiFlightSelect.test_form_submission',
+        'test_boston_newyork_flightselect.TestBostonNewYork.test_form_submission',
+        'test_mexicocity_berlin_flightselect.MexicoCityBerlin.test_form_submission',
     ]
-    # run_tests(test_names=test_cases_to_run)
+    run_tests(test_names=test_cases_to_run, subfolder='flight_selector')
 
     # Run all tests in a specific subfolder
-    run_tests(subfolder='flight_selector', append=False)  # Overwrite the report file
+    # run_tests(subfolder='flight_selector', append=False)  # Overwrite the report file
     # run_tests(subfolder='links', append=True)  # Append to the report file
     # run_tests(subfolder='end_to_end', append=True)  # Append to the report file
     # run_tests(subfolder='other', append=True)  # Append to the report file
