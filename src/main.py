@@ -106,5 +106,5 @@ if __name__ == '__main__':
     # Run all tests in a specific subfolder
     # run_tests(subfolder='flight_selector', append=False)  # Overwrite the report file
     # run_tests(subfolder='links', append=True)  # Append to the report file
-    # run_tests(subfolder='end_to_end', append=True)  # Append to the report file
-    run_tests(subfolder='other', append=True)  # Append to the report file
+    run_tests(subfolder='end_to_end', append=True)  # Append to the report file
+    # run_tests(subfolder='other', append=True)  # Append to the report file

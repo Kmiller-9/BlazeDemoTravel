@@ -32,13 +32,21 @@ class BostonNewYorkEtoE(unittest.TestCase):
         # Wait for the next page to load
         time.sleep(3)
 
+        # Check for the header on the resulting page to verify success
+        header = driver.find_element(By.TAG_NAME, "h3")
+        self.assertIn("Flights from Boston to New York", header.text, "Test Failed: Header did not contain the expected text.")
+
         # Select the first flight (Virgin America 43)
         first_flight = driver.find_element(By.XPATH, "//table/tbody/tr[1]/td[1]/input")
         first_flight.click()
 
         # Wait for the next page to load
-        time.sleep(3)
-
+        time.sleep(4)
+        
+       # Check for the header on the resulting page to verify success
+        header = driver.find_element(By.TAG_NAME, "h2")
+        self.assertIn("Your flight from TLV to SFO has been reserved", header.text, "Test Failed: Header did not contain the expected text.")
+        
         # Example interaction: Enter Name
         customer_name = driver.find_element(By.NAME, "inputName")
         customer_name.send_keys("Testy McTester")
@@ -89,8 +97,11 @@ class BostonNewYorkEtoE(unittest.TestCase):
         page_source = driver.page_source
         print("Page Source:\n", page_source)
 
-        # Check for a specific element on the resulting page to verify success
-        self.assertIn("Your flight from TLV to SFO has been reserved.", page_source, "Test Failed: Confirmation page did not load as expected.")
+        # Check for the title to verify success
+        expected_title = "BlazeDemo Confirmation"
+        actual_title = driver.title
+        self.assertEqual(expected_title, actual_title, "Test Failed: Confirmation page did not load as expected.")
+        print("Confirmation page loaded with correct title")
 
     def tearDown(self):
         # Close the browser
