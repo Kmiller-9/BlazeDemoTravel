@@ -32,17 +32,24 @@ This project is a web automation script for the BlazeDemo website using Selenium
     Ensure that [requirements.txt](http://_vscodecontentref_/3) contains the following packages:
 
     ```
-    selenium
-    webdriver-manager
-    ```
-
+   selenium
+   webdriver-manager
+   pytest
+   parameterized
+    
 ## Running the Tests
 
 You can run the tests using the `main.py` script located in the `src` directory. The script provides options to run specific test cases, all tests in a subfolder, or all tests in the project.
 
 ### Running All Tests in a Subfolder
 
-To run all tests in a specific subfolder, use the `subfolder` parameter:
+To run all tests in a specific subfolder, use the `subfolder` parameter at the bottom of the main method:
+the code looks like this:
+   # Run all tests in a specific subfolder
+    # run_tests(subfolder='flight_selector', append=False)  # Overwrite the report file
+    # run_tests(subfolder='links', append=True)  # Append to the report file
+    # run_tests(subfolder='end_to_end', append=True)  # Append to the report file
+    # run_tests(subfolder='other', append=True)  # Append to the report file
 
 ```sh
 
