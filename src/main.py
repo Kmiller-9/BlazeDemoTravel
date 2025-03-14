@@ -103,11 +103,12 @@ if __name__ == '__main__':
     test_cases_to_run = [
         'test_boston_newyork_flightselect.TestBostonNewYork.test_form_submission',
         'test_mexicocity_berlin_flightselect.MexicoCityBerlin.test_form_submission',
+        'test_boston_dublin_flightselect.TestBostonDublin.test_form_submission',
     ]
-    run_tests(test_names=test_cases_to_run, subfolder='flight_selector')
+    # run_tests(test_names=test_cases_to_run, subfolder='flight_selector')
 
     # Run all tests in a specific subfolder
     # run_tests(subfolder='flight_selector', append=False)  # Overwrite the report file
-    # run_tests(subfolder='links', append=True)  # Append to the report file
-    # run_tests(subfolder='end_to_end', append=True)  # Append to the report file
+    run_tests(subfolder='links', append=True)  # Append to the report file
+    run_tests(subfolder='end_to_end', append=True)  # Append to the report file
     # run_tests(subfolder='other', append=True)  # Append to the report file

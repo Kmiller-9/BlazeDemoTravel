@@ -18,16 +18,37 @@ This project is a web automation script for the BlazeDemo website using Selenium
 
 1. Clone the repository
 
-1. Create and activate a virtual environment (optional but recommended):
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
- 
-## Install the required packages:
-   pip install selenium webdriver-manager
- ```sh
-    pip install -r requirements.txt
-    ```
+2. Create a Virtual Environment (optional)
+	First, navigate to your project directory in the terminal or command prompt. Then, run the following command to create a virtual environment named venv:
+
+		python -m venv venv
+
+	This command creates a directory named venv that contains a copy of the Python interpreter and a site-packages directory where your project's dependencies will be installed.
+
+3. Activate the Virtual Environment (optional)
+	The method to activate the virtual environment depends on your operating system:
+
+	On Windows:
+
+		venv\Scripts\activate
+
+	On macOS and Linux:
+
+		source venv/bin/activate
+
+   Verify Activation
+	Once activated, your terminal prompt should change to indicate that you are now working within the virtual environment. It will typically show the name of the virtual environment in parentheses, like this:
+
+		(venv) $
+
+   Note: if an error related to execution policies is encountered it could  be because the execution of scripts is disabled on your system. Entering the following may fix the issue (Windows)
+
+      Set-ExecutionPolicy Unrestricted -Scope Process
+
+4. Install Dependencies required
+	With the virtual environment activated, you can now install your project's dependencies using pip. For example, to install the dependencies listed in your requirements.txt file, run:
+
+		pip install -r requirements.txt
 
     Ensure that [requirements.txt](http://_vscodecontentref_/3) contains the following packages:
 

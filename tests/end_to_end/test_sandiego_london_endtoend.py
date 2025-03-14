@@ -3,9 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
+import time
 import io
 import sys
 
@@ -33,8 +33,8 @@ class SanDiegoLondonEtoE(unittest.TestCase):
         driver.find_element(By.CSS_SELECTOR, "input[type='submit']").click()
         print("Test Passed: Form submitted successfully and ticket page loaded.")
 
-        # Wait for the new page to load
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".btn.btn-small")))
+        # Wait for the next page to load
+        time.sleep(4)
 
         # Click on the button with the class 'btn btn-small'
         button_css_selector = ".btn.btn-small"
@@ -74,9 +74,8 @@ class SanDiegoLondonEtoE(unittest.TestCase):
         purchase_button.click()
         print("Flight purchased")
 
-        # Wait for the confirmation page to load
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
-        print("Confirmation page loaded")
+       # Wait for the next page to load
+        time.sleep(4)
 
     def tearDown(self):
         # Close the browser

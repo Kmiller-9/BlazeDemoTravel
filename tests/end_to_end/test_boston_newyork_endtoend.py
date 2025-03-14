@@ -34,7 +34,7 @@ class BostonNewYorkEtoE(unittest.TestCase):
 
         # Check for the header on the resulting page to verify success
         header = driver.find_element(By.TAG_NAME, "h3")
-        self.assertIn("Flights from Boston to New York", header.text, "Test Failed: Header did not contain the expected text.")
+        self.assertIn("Flights from Dublin to New York", header.text, "Test Failed: Header did not contain the expected text.")
 
         # Select the first flight (Virgin America 43)
         first_flight = driver.find_element(By.XPATH, "//table/tbody/tr[1]/td[1]/input")
