@@ -34,7 +34,7 @@ class TestBostonBuenos(unittest.TestCase):
 
         # Check for the header on the resulting page to verify success
         header = driver.find_element(By.TAG_NAME, "h3")
-        self.assertIn("Flights from Boston to Buenos Aires", header.text, "Test Failed: Header did not contain the expected text.")
+        self.assertIn("Flights from Boston to Cairo Aires", header.text, "Test Failed: Header did not contain the expected text.")
 
     def tearDown(self):
         # Close the browser

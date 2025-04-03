@@ -29,7 +29,7 @@ class DestinationOfTheWeek(unittest.TestCase):
         print("Destination of the week link clicked")
 
         # Wait for the new page to load
-        time.sleep(5)
+        time.sleep(4)
 
         # Validate the title of the new page
         self.assertIn("BlazeDemo - vacation", driver.title)
